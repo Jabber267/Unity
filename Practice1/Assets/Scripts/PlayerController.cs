@@ -76,16 +76,17 @@ public class PlayerController : MonoBehaviour
     {
         if (other.CompareTag("Coin"))
         {
+            GameManager.instance.IncreaseScore(1);
             coinSound.Play();
             Destroy(other.gameObject);
         }
         else if (other.CompareTag("Enemy"))
         {
-
+            GameManager.instance.ResetGame();
         }
         else if (other.CompareTag("Portal"))
         {
-
+            GameManager.instance.NextLevel();
         }
     }
 }
