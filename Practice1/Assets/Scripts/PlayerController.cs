@@ -27,6 +27,10 @@ public class PlayerController : MonoBehaviour
     {
         MovementHandler();
         JumpHandler();
+        if (transform.position.y < 0)
+        {
+            GameManager.instance.ResetGame();
+        }
     }
 
     private void MovementHandler()
